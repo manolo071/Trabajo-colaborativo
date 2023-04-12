@@ -26,3 +26,36 @@ def realizar_resta(a, b):
 def realizar_multiplicacion(a, b):
     """Función para realizar la operación de multiplicación."""
     return a * b
+
+def realizar_division(a, b):
+    """Función para realizar la operación de división."""
+    if b != 0:
+        return a / b
+    else:
+        print("¡Error! No se puede dividir por cero.")
+        return None
+
+# Solicitar al usuario ingresar dos números
+numero1 = obtener_numero_validado("Ingresa el primer número: ")
+numero2 = obtener_numero_validado("Ingresa el segundo número: ")
+
+# Solicitar al usuario ingresar la operación deseada
+operacion = input("Ingresa la operación deseada (+ para suma, - para resta, * para multiplicación, / para división): ")
+
+# Realizar la operación seleccionada
+if operacion == "+":
+    resultado = realizar_suma(numero1, numero2)
+elif operacion == "-":
+    resultado = realizar_resta(numero1, numero2)
+elif operacion == "*":
+    resultado = realizar_multiplicacion(numero1, numero2)
+elif operacion == "/":
+    resultado = realizar_division(numero1, numero2)
+else:
+    print("¡Error! Operación inválida.")
+    resultado = None
+
+# Mostrar el resultado
+if resultado is not None:
+    print("El resultado de la operación es:", resultado)
+
